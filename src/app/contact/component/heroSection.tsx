@@ -21,13 +21,16 @@ function ContactHeroSection({}: Props) {
         src={"/hero-background.jpg"}
         alt="background image"
       />
-      <div className="absolute w-full h-full px-[50px] z-10 text-white hero-background-grad">
+      <div className="absolute w-full h-full p-5 md:px-[50px] z-10 text-white hero-background-grad">
         <div className="flex">
-          <div className="w-[70%] space-y-2">
+          <div className="w-full md:w-[70%] space-y-2">
             <h1 className="text-white pb-[25px] pt-[50px]">Sea Rocket Tech</h1>
 
-            <div className="w-[600px] space-y-4 mx-auto">
-              <p>Pay for your domain and we will get to work immediately... </p>
+            <div className="w-full md:w-[600px] space-y-4 mx-auto">
+              <p>
+                Lets talk about your applications. Contact us for assistance on
+                your projects
+              </p>
               {/* <div className="flex items-center  justify-center">
                 <div className="inline-blockmx-auto mt-8">
                   <CallToActionButton text="More" />
@@ -35,7 +38,7 @@ function ContactHeroSection({}: Props) {
               </div> */}
             </div>
           </div>
-          <div className="w-[30%] h-full ">
+          <div className="w-[30%] h-full hidden md:block ">
             <Image
               className="object-contain absolute bottom-[50px] right-[50px]"
               width={350}

@@ -14,26 +14,33 @@ function PricesHeroSection({}: Props) {
     "Build Mobile Apps",
   ];
   return (
-    <section className="relative h-[450px]">
+    <section className="relative h-[600px]  md:h-[450px]">
       <Image
         className="absolute object-fill z-10"
         fill={true}
         src={"/hero-background.jpg"}
         alt="background image"
       />
-      <div className="absolute w-full h-full px-[50px] z-10 text-white hero-background-grad">
+      <div className="absolute w-full h-full p-10 md:px-[50px] z-10 text-white hero-background-grad">
         <div className="flex">
-          <div className="w-[70%] space-y-2">
+          <div className="w-full md:w-[70%] space-y-2">
             <h1 className="text-white pb-[25px] pt-[50px]">
               Sea Rocket Pricing
             </h1>
 
-            <div className="w-[600px] space-y-4 mx-auto">
-              <p>
-                Pay for your <u className="text-yellow">domain</u> and we will
-                get to work immediately...{" "}
+            <div className="w-full md:w-[600px] space-y-4 mx-auto">
+              <h5>
+                Pay for your <u className="text-yellow text-2xl">domain</u> and
+                we will get to work{" "}
+                <u className="text-yellow text-2xl">immediately...</u>{" "}
+              </h5>
+              <p className="space-y-2">
+                <span> ❌ No need for full payments upfront. </span>
+                <br />
+                <span> ✅ Pay Progessively</span>
+                <br />
+                <span> ✅ We are here to serve you</span>
               </p>
-              <p>No need for full payments upfront. We are here to serve you</p>
               {/* <div className="flex items-center  justify-center">
                 <div className="inline-blockmx-auto mt-8">
                   <CallToActionButton text="More" />
@@ -41,7 +48,7 @@ function PricesHeroSection({}: Props) {
               </div> */}
             </div>
           </div>
-          <div className="w-[30%] h-full ">
+          <div className="md:w-[30%] h-full hidden md:block ">
             <Image
               className="object-contain absolute bottom-[50px] right-[50px]"
               width={350}

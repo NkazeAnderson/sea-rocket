@@ -7,7 +7,7 @@
     @apply bg-white m-0 p-0;
   }
   h1 {
-    @apply font-extrabold text-[64px];
+    @apply font-extrabold text-[50px] md:text-[64px];
   }
   h2 {
     @apply font-extrabold text-[32px];

@@ -11,8 +11,8 @@ type Props = {};
 function Footer({}: Props) {
   return (
     <section className="bg-primary text-white px-4">
-      <div className="flex w-full justify-between">
-        <div className="p-4">
+      <div className="flex w-full justify-between flex-col-reverse md:flex-row">
+        <div className="p-4 hidden md:block">
           <Logo />
         </div>
         <div>

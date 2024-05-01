@@ -20,7 +20,7 @@ function ServiceCard({ service }: { service: ServiceT }) {
   const totalPrice = hosting_price + domain_price + developer_fee;
   const highPrice = totalPrice + 30000;
   return (
-    <div className="w-1/3 p-4">
+    <div className="w-full md:w-1/3 p-4">
       <div
         id={`${name.split(" ")[0]}`}
         className="rounded-2xl bg-lightGray border  border-secondary "
@@ -28,42 +28,42 @@ function ServiceCard({ service }: { service: ServiceT }) {
         <h1 className="text-center text-secondary">{name}</h1>
         <hr className=" border-dashed border-t-2 border-secondary  my-2" />
         <div className="p-4">
-          <div className="flex my-2 w-full items-center justify-center space-x-3">
+          <div className="md:flex my-2 w-full items-center justify-center md:space-x-3">
             <div className="bg-primary text-white p-2 w-full">
               <h4 className="text-center">Domain</h4>
             </div>
 
-            <div className="bg-primary text-white p-2 w-full rounded-xl">
+            <div className="bg-white border border-4 border-primary md:bg-primary text-primary md:text-white p-2 w-full md:rounded-xl">
               <h5 className="text-center">
                 <i>{domain_price} Fcfa</i>
               </h5>
             </div>
           </div>
-          <div className="flex my-2 w-full items-center justify-center space-x-3">
+          <div className="md:flex my-2 w-full items-center justify-center md:space-x-3">
             <div className="bg-primary text-white p-2 w-full">
               <h4 className="text-center">Hosting</h4>
             </div>
-            <div className="bg-primary text-white p-2 w-full rounded-xl">
+            <div className="bg-white border border-4 border-primary md:bg-primary text-primary md:text-white p-2 w-full md:rounded-xl">
               <h5 className="text-center">
                 <i>{hosting_price} Fcfa</i>
               </h5>
             </div>
           </div>
-          <div className="flex my-2 w-full items-center justify-center space-x-3">
+          <div className="md:flex my-2 w-full items-center justify-center md:space-x-3">
             <div className="bg-primary text-white p-2 w-full">
               <h4 className="text-center">Developer</h4>
             </div>
-            <div className="bg-primary text-white p-2 w-full rounded-xl">
+            <div className="bg-white border border-4 border-primary md:bg-primary text-primary md:text-white p-2 w-full md:rounded-xl">
               <h5 className="text-center">
                 <i>{developer_fee} Fcfa</i>
               </h5>
             </div>
           </div>
-          <div className="flex my-2 w-full items-center justify-center space-x-3">
+          <div className="mt-12 md:flex my-2 w-full items-center justify-center md:space-x-3">
             <div className="bg-primary text-white p-2 w-full">
               <h3 className="text-center">Total</h3>
             </div>
-            <div className=" text-secondary p-2 w-full rounded-xl border border-primary">
+            <div className="mt-5 md:mt-0 text-secondary p-2 w-full rounded-xl border border-primary">
               <h4 className="text-center">
                 <i>{totalPrice} FCFA</i>
               </h4>
@@ -96,9 +96,9 @@ function ServiceCard({ service }: { service: ServiceT }) {
 
 function PriceList({}: Props) {
   return (
-    <section className="my-[70px] px-[50px]">
+    <section className="my-[70px] p-2 md:px-[50px]">
       <h1 className="text-center text-primary py-4">Prices</h1>
-      <div className="flex flex-wrap">
+      <div className="md:flex flex-wrap">
         {services.map((service) => (
           <ServiceCard key={service.name} service={service} />
         ))}

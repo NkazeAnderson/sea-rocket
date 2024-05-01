@@ -8,7 +8,7 @@ function HomeOfferSection({}: Props) {
   return (
     <section className="bg-secondary py-10 text-white relative">
       <h1 className="text-center">What do we offer?</h1>
-      <div className="w-[60%] mx-auto">
+      <div className="p-2 md:p-0 md:w-[60%] mx-auto">
         <p className="text-center text-[24px]">
           We build and deploy engaging web or mobile applications. We work
           directly with you or your web designers to code out the

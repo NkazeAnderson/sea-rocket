@@ -14,31 +14,40 @@ function ServicesHeroSection({}: Props) {
     "Build Mobile Apps",
   ];
   return (
-    <section className="relative h-[550px]">
+    <section className="relative h-[500px] md:h-[550px]">
       <Image
         className="absolute object-fill z-10"
         fill={true}
         src={"/hero-background.jpg"}
         alt="background image"
       />
-      <div className="absolute w-full h-full px-[50px] z-10 text-white hero-background-grad">
+      <div className="absolute w-full h-full px-[10px] md:px-[50px] z-10 text-white hero-background-grad">
         <div className="flex">
-          <div className="w-[70%] space-y-2">
-            <h1 className="text-white pb-[25px] pt-[50px]">
+          <div className="w-full md:w-[70%] space-y-2">
+            <h1 className="text-white pb-[25px] pt-[50px] pl-5">
               Sea Rocket Services
             </h1>
 
-            <div className="w-[600px] space-y-4 mx-auto">
+            <div className="w-full md:w-[600px] space-y-4 mx-auto">
               {services.map((service) => (
                 <div key={service} className="flex space-x-2 items-center">
                   <Image
+                    className="hidden md:block"
                     src={"/rocket-pointer.png"}
                     width={70}
                     height={50}
                     alt="rocket pointers"
                   />
 
-                  <h4 className="text-center">{service}</h4>
+                  <h4 className="text-center hidden md:block">{service}</h4>
+                  <Image
+                    className="md:hidden"
+                    src={"/rocket-pointer.png"}
+                    width={50}
+                    height={30}
+                    alt="rocket pointers"
+                  />
+                  <p className="md:hidden">{service}</p>
                 </div>
               ))}
 
@@ -49,7 +58,7 @@ function ServicesHeroSection({}: Props) {
               </div> */}
             </div>
           </div>
-          <div className="w-[30%] h-full ">
+          <div className="hidden md:block w-[30%] h-full ">
             <Image
               className="object-contain absolute bottom-[50px] right-[50px]"
               width={350}

@@ -21,7 +21,7 @@ function ServiceCard({ service }: { service: ServiceT }) {
   const totalPrice = hosting_price + domain_price + developer_fee;
   const highPrice = totalPrice + 30000;
   return (
-    <div className="w-1/3 p-4">
+    <div className="w-full md:w-1/3 p-4">
       <div className="rounded-3xl text-white bg-secondary shadow-lg shadow-black my-8">
         <div className="w-full flex justify-center bg-white">
           <Image width={400} height={300} src={image} alt="service image" />
@@ -52,9 +52,9 @@ function ServiceCard({ service }: { service: ServiceT }) {
 
 function ServicesList({}: Props) {
   return (
-    <section className="my-[60px] px-[50px]">
+    <section className="my-[60px] px-2 md:px-[50px]">
       <h1 className="text-center text-primary pt-12">Services</h1>
-      <div className="flex flex-wrap">
+      <div className="md:flex flex-wrap">
         {services.map((service) => (
           <ServiceCard key={service.name} service={service} />
         ))}

@@ -1,6 +1,5 @@
 import { FaHome, FaStar } from "react-icons/fa";
 import { MdMail } from "react-icons/md";
-import { useRef } from "react";
 
 export const navLinks: NavLinkT[] = [
   { text: "Home", link: "/", Icon: FaHome },
