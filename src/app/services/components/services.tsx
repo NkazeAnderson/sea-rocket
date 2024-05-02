@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { services } from "../../../../constants";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -22,7 +24,12 @@ function ServiceCard({ service }: { service: ServiceT }) {
   const highPrice = totalPrice + 30000;
   return (
     <div className="w-full md:w-1/3 p-4">
-      <div className="rounded-3xl text-white bg-secondary shadow-lg shadow-black my-8">
+      <motion.div
+        initial={{ rotate: 10, y: 50 }}
+        whileInView={{ rotate: 0, y: 0 }}
+        transition={{ duration: 2 }}
+        className="rounded-3xl text-white bg-secondary shadow-lg shadow-black my-8"
+      >
         <div className="w-full flex justify-center bg-white">
           <Image width={400} height={300} src={image} alt="service image" />
         </div>
@@ -39,13 +46,16 @@ function ServiceCard({ service }: { service: ServiceT }) {
           <p>{text2 && text2}</p>
           <br />
           <Link href={`/pricing`}>
-            <div className="flex hover:cursor-pointer justify-end items-center p-4 space-x-4 text-yellow">
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              className="flex hover:cursor-pointer justify-end items-center p-4 space-x-4 text-yellow"
+            >
               <h5 className="inline underline ">More info on pricing</h5>
               <FaArrowRight />
-            </div>
+            </motion.div>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

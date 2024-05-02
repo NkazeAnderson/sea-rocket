@@ -49,7 +49,14 @@ export const services: ServiceT[] = [
     image: "/undraw_typewriter_re_u9i2.svg",
     text1: "Clone an existing website staticly in less than 24 hours",
     text2: "The cloned website will be adjusted to suite your needs",
-    includes: ["Domain name"],
+    includes: [
+      ".Com/.Org Domain name",
+      "1 Professional email",
+      "1 Year hosting",
+      "Exact Website Replica",
+      "24hrs delivery",
+      "1 year free support",
+    ],
   },
   {
     name: "WordPress",
@@ -60,7 +67,14 @@ export const services: ServiceT[] = [
     text1: "Build a dynamic website using WordPress in less than 1 week",
     text2:
       " Best option for businesses in need of a simple and decent online presence",
-    includes: ["Domain name"],
+    includes: [
+      ".Com/.Org Domain name",
+      "3 Professional email",
+      "1 Year hosting",
+      "100% Customized Website",
+      "7 days delivery",
+      "1 year free support",
+    ],
   },
 
   {
@@ -71,7 +85,14 @@ export const services: ServiceT[] = [
     image: "/undraw_react_re_g3ui.svg",
     text1: "Build fully dynamic website with react code in less than 2 weeks",
     text2: "Your site will be fully customized for high user experience",
-    includes: ["Domain name"],
+    includes: [
+      ".Com/.Org Domain name",
+      "5 Professional email",
+      "1 Year hosting",
+      "Company Branded Website",
+      "14 days delivery",
+      "1 year free support",
+    ],
   },
   {
     name: "Rest APIs",
@@ -82,7 +103,14 @@ export const services: ServiceT[] = [
     text1: "Build secured apis to run on cloud with Javascript or python",
     text2:
       "Your apis will have full crud functionality, secured and documented",
-    includes: ["Domain name"],
+    includes: [
+      "Crud endpoints",
+      "Secure endpoints",
+      "Code",
+      "Admin Permissions",
+      "14 days delivery",
+      "1 year free support",
+    ],
   },
   {
     name: "Mobile Apps",
@@ -94,6 +122,6 @@ export const services: ServiceT[] = [
       "Build android or Iphone apps for your company and keep engaged with your customers",
     text2:
       "Your applications will be light weight, fast and fully dynamic with a good interface",
-    includes: ["Domain name"],
+    includes: ["React Native Code", "20 days delivery", "1 year free support"],
   },
 ];

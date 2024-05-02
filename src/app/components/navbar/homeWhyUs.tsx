@@ -1,13 +1,20 @@
 import Image from "next/image";
 import React from "react";
 import { reasons } from "../../../../constants";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function ReasonCard({ reason, index }: { reason: ReasonT; index: number }) {
   const { heading, text1, text2, image } = reason;
   return (
-    <div className="bg-secondary p-8 rounded-lg my-8">
+    <motion.div
+      initial={{ x: index % 2 !== 0 ? "-100%" : "100%" }}
+      whileInView={{ x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 2 }}
+      className="bg-secondary p-8 rounded-lg my-8"
+    >
       <div
         className={`md:flex ${
           index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
@@ -34,7 +41,7 @@ function ReasonCard({ reason, index }: { reason: ReasonT; index: number }) {
           {text2 && <p>{text2}</p>}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,8 +1,10 @@
-import Image from "next/image";
+"use client";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { FaCircleCheck, FaFrancSign } from "react-icons/fa6";
 import { services } from "../../../../constants";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
@@ -18,9 +20,13 @@ function ServiceCard({ service }: { service: ServiceT }) {
     includes,
   } = service;
   const totalPrice = hosting_price + domain_price + developer_fee;
-  const highPrice = totalPrice + 30000;
   return (
-    <div className="w-full md:w-1/3 p-4">
+    <motion.div
+      initial={{ rotate: 10, y: 50 }}
+      whileInView={{ rotate: 0, y: 0 }}
+      transition={{ duration: 1.5 }}
+      className="w-full md:w-1/3 p-4"
+    >
       <div
         id={`${name.split(" ")[0]}`}
         className="rounded-2xl bg-lightGray border  border-secondary "
@@ -84,13 +90,17 @@ function ServiceCard({ service }: { service: ServiceT }) {
         </div>
 
         <div className="flex justify-center py-2 space-x-4 text-white">
-          <button className="flex items-center space-x-4 bg-secondary rounded-xl  py-2 px-8">
-            <h5 className="inline">Get Offer</h5>
-            <FaArrowRight />
-          </button>
+          <Link
+            href={`https://wa.me/237683403750?text=I'm%20interested%20in%20building%20a%20${name}%20Application`}
+          >
+            <button className="flex items-center space-x-4 bg-secondary rounded-xl  py-2 px-8">
+              <h5 className="inline">Get Offer</h5>
+              <FaArrowRight />
+            </button>
+          </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

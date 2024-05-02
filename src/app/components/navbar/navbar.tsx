@@ -26,16 +26,15 @@ function Navbar({}: Props) {
         <div
           onClick={() => {
             setOpened(!opened);
-            console.log(opened);
           }}
         >
-          <MobileMenuButton />
+          <MobileMenuButton opened={opened} />
         </div>
       </nav>
       <div
         className={`bg-secondary ${
           !opened && "hidden"
-        } pt-[150px] fixed z-40 w-full md:hidden`}
+        } pt-[120px] transition ease-in-out duration-1000 fixed z-40 w-full md:hidden shadow-black shadow-lg rounded-2xl`}
       >
         <NavLinks
           hide={() => {
