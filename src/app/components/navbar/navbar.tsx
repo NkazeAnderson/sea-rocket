@@ -34,7 +34,7 @@ function Navbar({}: Props) {
       </nav>
       <div
         className={`bg-secondary ${
-          opened && "hidden"
+          !opened && "hidden"
         } pt-[150px] fixed z-40 w-full md:hidden`}
       >
         <NavLinks
