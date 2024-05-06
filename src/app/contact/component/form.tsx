@@ -1,10 +1,41 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { sendMessage } from "../../../../utils";
 
 type Props = {};
 
 function ContactForm({}: Props) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
   return (
-    <form className="w-full my-4">
+    <form
+      id="contactForm"
+      className="w-full my-4"
+      action={(data) => {
+        setStatus("sending");
+        sendMessage(data)
+          .then((r) => {
+            setMessage("");
+            setPhone("");
+            setEmail("");
+            setName("");
+            setStatus("sent");
+            setTimeout(() => {
+              setStatus("");
+            }, 5000);
+          })
+          .catch(() => {
+            setStatus("error");
+            setTimeout(() => {
+              setStatus("");
+            }, 5000);
+          });
+      }}
+    >
       <label htmlFor="name" className="text-[24px] text-primary my-2">
         Your Name
       </label>
@@ -13,6 +44,10 @@ function ContactForm({}: Props) {
         className="block outline outline-2 outline-primary p-2 rounded w-full"
         type="text"
         name="name"
+        value={name}
+        onChange={(e) => {
+          setName(e.currentTarget.value);
+        }}
       />
       <br />
       <label htmlFor="email" className="text-[24px] text-primary my-2">
@@ -23,6 +58,10 @@ function ContactForm({}: Props) {
         className="block outline outline-2 outline-primary p-2 rounded w-full"
         type="email"
         name="email"
+        value={email}
+        onChange={(e) => {
+          setEmail(e.currentTarget.value);
+        }}
       />
       <br />
       <label htmlFor="phone" className="text-[24px] text-primary my-2">
@@ -33,6 +72,10 @@ function ContactForm({}: Props) {
         className="block outline outline-2 outline-primary p-2 rounded w-full"
         type="tel"
         name="phone"
+        value={phone}
+        onChange={(e) => {
+          setPhone(e.currentTarget.value);
+        }}
       />
       <br />
       <label htmlFor="message" className="text-[24px] text-primary my-2">
@@ -43,17 +86,28 @@ function ContactForm({}: Props) {
         className="block outline outline-2 outline-primary p-2 rounded w-full"
         name="message"
         rows={6}
+        value={message}
+        onChange={(e) => {
+          setMessage(e.currentTarget.value);
+        }}
       />
       <br />
-      <input type="hidden" value={"sea rocket tech"} />
+      <input name="bot" type="hidden" value={""} />
       <div className="flex justify-end">
         <button
-          className="bg-primary text-white ml-auto py-4 px-8 rounded"
+          className={`${
+            status === "sending" ? "bg-yellow" : "bg-primary"
+          }  text-white ml-auto py-4 px-8 rounded`}
           type="submit"
+          disabled={status === "sending"}
         >
-          Send Email
+          {status === "sending" ? "Sending" : "Send Email"}
         </button>
       </div>
+      {status === "error" && (
+        <h5 className="text-yellow">Error submitting, Please retry....</h5>
+      )}
+      {status === "sent" && <h5 className="text-primary">Message sent</h5>}
     </form>
   );
 }
